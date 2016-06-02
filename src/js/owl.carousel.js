@@ -1079,16 +1079,16 @@
 				+ this.settings.margin;
 		}
 
-		// catch position // ie to fix
-		if (this.state.inMotion && this.support3d) {
-			animatedPos = this.getTransformProperty();
-			this.drag.offsetX = animatedPos;
-			this.animate(animatedPos);
-			this.state.inMotion = true;
-		} else if (this.state.inMotion && !this.support3d) {
-			this.state.inMotion = false;
-			return false;
-		}
+		// catch position // ie to fix ,(this destroyed y-scrolling) set in comments by stefano on 02-06-2016
+		//if (this.state.inMotion && this.support3d) {
+		//	animatedPos = this.getTransformProperty();
+		//	this.drag.offsetX = animatedPos;
+		//	this.animate(animatedPos);
+		//	this.state.inMotion = true;
+		//} else if (this.state.inMotion && !this.support3d) {
+		//	this.state.inMotion = false;
+		//	return false;
+		//}
 
 		this.drag.startX = pageX - this.drag.offsetX;
 		this.drag.startY = pageY - this.drag.offsetY;
